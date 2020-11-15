@@ -1,0 +1,11 @@
+<mat-toolbar class="header-container" color="primary">
+    <mat-toolbar-row>
+      <button mat-button class="app-logo" aria-label="App Logo">
+        <h1>Angular<br>Firebase</h1>
+      </button>
+      <span class="header-spacer"></span>
+      <button mat-mini-fab class="sidenav-toggle" *ngIf="authState | async" (click)="onToggleSidenav()" aria-label="Account Menu Toggle">
+        <mat-icon>face</mat-icon>
+      </button>
+    </mat-toolbar-row>
+</mat-toolbar>

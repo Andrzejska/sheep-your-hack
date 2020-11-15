@@ -1,0 +1,64 @@
+@use 'src/styles/theme';
+
+.sidenav-container {
+  padding: 1rem;
+  text-align: right;
+
+  .exit-container {
+    text-align: right;
+    margin: 0 1rem 0 0;
+  }
+
+  .sidenav-hero {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0;
+    padding: 0 .5rem;
+
+    h2, mat-icon {
+      margin: 0;
+    }
+
+    .user-avatar {
+      margin: 0 0 0 1rem;
+      z-index: 1;
+    }
+  }
+
+  .sidenav {
+    margin: 0 1rem 0 auto;
+    width: 50%;
+
+    .sidenav-button {
+      border-radius: 2rem;
+      color: theme.$grey-color;
+      display: block;
+      margin: .5rem 0;
+      padding: 0 .5rem;
+      text-align: right;
+      width: 100%;
+      z-index: 0;
+
+      mat-icon {
+        margin: 0 0 0 .5rem;
+      }
+    }
+
+    .sidenav-button-active {
+      color: theme.$primary-color;
+    }
+  }
+
+  .logout-button {
+    border-radius: 2rem;
+    margin: 0 1rem 0 0;
+    padding: 0 .5rem;
+    text-align: right;
+    width: 50%;
+
+    mat-icon {
+      margin: 0 0 0 .5rem;
+    }
+  }
+}

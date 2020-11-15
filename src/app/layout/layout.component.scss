@@ -1,0 +1,52 @@
+@use 'src/styles/theme';
+
+mat-sidenav-container {
+  background-color: theme.$primary-color;
+
+  mat-sidenav {
+    width: 100%;
+  }
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .app-content {
+    background-color: theme.$white-color;
+    border-radius: theme.$round-top-border-radius;
+    flex: 1;
+    overflow: auto;
+    padding: 2rem;
+  }
+
+  .app-content.not-authenticated {
+    border-radius: unset;
+  }
+
+  .app-header {
+    height: theme.$header-height;
+  }
+
+  .app-footer {
+    height: theme.$footer-height;
+  }
+
+  .app-footer, .app-header {
+    background-color: theme.$primary-color;
+  }
+}
+
+
+@media(min-width: theme.$breakpoint-tablet) {
+  mat-sidenav-container > mat-sidenav {
+    width: 50%;
+  }
+}
+
+@media(min-width: theme.$breakpoint-desktop) {
+  mat-sidenav-container > mat-sidenav {
+    width: 25%;
+  }
+}

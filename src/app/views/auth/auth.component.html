@@ -1,0 +1,25 @@
+<div class="auth-container">
+  <div class="auth-brand-hero">
+    <h1>Angular<br>Firebase</h1>
+  </div>
+
+  <form class="form-container" [formGroup]="authForm" (ngSubmit)="onSubmit(authForm)">
+    <mat-form-field *ngFor="let field of formFields" appearance="outline">
+      <mat-label>{{ field.label }}</mat-label>
+      <input matInput [formControlName]="field.controlName" [type]="field.type" aria-label="" [placeholder]="field.placeholder" [required]="isControlRequired(field.validators)">
+      <mat-icon matSuffix>{{ field.icon }}</mat-icon>
+      <mat-error *ngIf="authForm.controls[field.controlName].invalid">
+        {{ getErrorMessage(authForm.controls[field.controlName]) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="authForm.invalid">{{ getFormErrorMessage(authForm.errors) }}</mat-error>
+    <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="authForm.invalid">
+      {{ submitButtonText | titlecase }}
+    </button>
+    <mat-error class="server-error" *ngIf="serverError">{{ serverError }}</mat-error>
+    <div class="alt-option">
+      <span>{{ alternateAuthOption.text }}</span>
+      <button type="button" (click)="onToggleFormState(formState)">{{ alternateAuthOption.button | titlecase }}</button>
+    </div>
+  </form>
+</div>
