@@ -6,7 +6,8 @@
   <form class="form-container" [formGroup]="authForm" (ngSubmit)="onSubmit(authForm)">
     <mat-form-field *ngFor="let field of formFields" appearance="outline">
       <mat-label>{{ field.label }}</mat-label>
-      <input matInput [formControlName]="field.controlName" [type]="field.type" aria-label="" [placeholder]="field.placeholder" [required]="isControlRequired(field.validators)">
+      <input matInput [formControlName]="field.controlName" [type]="field.type" aria-label=""
+             [placeholder]="field.placeholder" [required]="isControlRequired(field.validators)">
       <mat-icon matSuffix>{{ field.icon }}</mat-icon>
       <mat-error *ngIf="authForm.controls[field.controlName].invalid">
         {{ getErrorMessage(authForm.controls[field.controlName]) }}
@@ -22,4 +23,8 @@
       <button type="button" (click)="onToggleFormState(formState)">{{ alternateAuthOption.button | titlecase }}</button>
     </div>
   </form>
+
+  <div fxLayoutAlign="center">
+    <button class="button" mat-button (click)="authService.googleSignIn()">Login with Google</button>
+  </div>
 </div>

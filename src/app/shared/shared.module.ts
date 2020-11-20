@@ -1,11 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    FlexLayoutModule
   ],
-  exports: [],
+  exports: [FlexLayoutModule],
 })
-export class SharedModule { }
+export class SharedModule {
+}
